@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script lang="javascript" src="model.js"></script>
+        <script lang="javascript" src="view.js"></script>
+        <script lang="javascript" src="viewModel.js"></script>
+        <script lang="javascript">
+            function load() {
+                const m = model()
+                const c = viewModel(m)
+                const v = view(document, c)
+            }
+        </script>
+    </head>
+    <body onload='load()'>
+        <p> Search: <input id = 'filter'> <button id='reset'>Reset</button></p>
+        <table id = 'phones'></table>
+    </body>
+</html>

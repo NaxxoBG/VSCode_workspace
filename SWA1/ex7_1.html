@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        .is-loading {
+            background: red
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <p v-if="username"> Your username is {{this.username}} </p>
+        <p v-if="!username">Please enter a username</p>
+        <input v-if="!username" type="text"  v-model.lazy="username"/>
+        <input v-if="username" ref="inpf" placeholder="Please enter something..." v-model="inputVal" />
+        <p style="word-wrap:break-word; width: 300px"> {{this.inputVal}} </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#root',
+            data: {
+                username: '',
+                inputVal: ''
+            },
+            methods: {
+                setUsername() {
+                    this.username = username
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
